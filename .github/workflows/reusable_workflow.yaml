@@ -1,0 +1,17 @@
+name: reusable workflow
+on:
+  workflow_call:
+
+jobs:
+  say_hello:
+    name: hello
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: esmithaas/hello-world-app-autogov@main
+        with:
+          who-to-greet: ${{ github.triggering_actor }}
+    
+    
+  
+  
